@@ -1,6 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Spelling Improver : Spell Better, Type Faster!",
+    "author": "Developer Pritam",
     "version": "1.0",
     "description": "Improve your spelling by typing words to unlock your browser tabs.",
     "permissions": [
