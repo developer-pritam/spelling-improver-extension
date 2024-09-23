@@ -1,0 +1,53 @@
+{
+    "manifest_version": 3,
+    "name": "Spelling Improver : Spell Better, Type Faster!",
+    "version": "1.0",
+    "description": "Improve your spelling by typing words to unlock your browser tabs.",
+    "permissions": [
+        "alarms",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "./src/js/background.js"
+    },
+    "icons": {
+        "128": "./src/icons/icon.png"
+    },
+    "offline_enabled": true,
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "./src/js/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "options_ui": {
+        "page": "./src/html/options.html",
+        "open_in_tab": true
+    },
+    "action": {
+        "default_popup": "./src/html/options.html",
+        "default_title": "Spell to unlock",
+        "default_icon": {
+            "128": "./src/icons/icon.png"
+        }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "src/html/lockscreen.html",
+                "src/css/lockscreen.css"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
